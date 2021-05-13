@@ -21,8 +21,8 @@ greengrocer = Greengrocer.new(products)
 user = User.new
 
 greengrocer.disp_products
-chosen_product = user.choose_product(products)
-greengrocer.ask_quantity(chosen_product)
-quantity_of_product = user.decide_quantity
-greengrocer.calc_total_price(chosen_product, quantity_of_product)
+user.choose_product(products)
+greengrocer.ask_quantity(user.chosen_product)
+user.decide_quantity
+greengrocer.calc_total_price(user)
 
