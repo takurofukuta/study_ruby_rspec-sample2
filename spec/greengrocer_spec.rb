@@ -23,4 +23,21 @@ RSpec.describe Greengrocer do
       end
     end
   end
+  describe ".disp_products" do
+    let(:greengrocer) {Greengrocer.new(product_params)}
+    let(:product_params) do  
+      [
+        { name: "トマト", price: 100 },
+        # { name: "きゅうり", price: 200 }
+      ]
+    end
+    let(:hello_msg) { "いらっしゃいませ。商品を選んでください" }
+    let(:product_msg1) { "1.トマト 100円" }
+    # let(:product_msg2) { "2.きゅうり 200円" }
+    let(:msg) { "#{hello_msg}\n#{product_msg1}\n" }
+
+    it "期待される結果が出力されること" do
+      expect { greengrocer.disp_products }.to output(msg).to_stdout
+    end
+  end
 end
